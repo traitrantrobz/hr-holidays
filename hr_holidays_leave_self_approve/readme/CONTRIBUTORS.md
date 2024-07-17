@@ -1,0 +1,2 @@
+- Florent Xicluna \<<florent.xicluna@camptocamp.com>\>
+- Tran Thanh Trai \<<traitt@trobz.com>\>

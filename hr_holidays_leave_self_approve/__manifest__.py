@@ -3,7 +3,7 @@
 
 {
     "name": "Self Approve Leaves",
-    "version": "15.0.1.0.0",
+    "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "summary": "Allow employees to approve their own leaves when allowed",
     "author": "Camptocamp, Odoo Community Association (OCA)",

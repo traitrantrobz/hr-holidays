@@ -48,10 +48,9 @@ class TestHolidaysAutoValidate(TransactionCase):
 
     def test_allocation_request_state(self):
         # Check for leave_allocation state
-        self.assertEqual(self.leave_allocation.state, "draft")
+        self.assertEqual(self.leave_allocation.state, "confirm")
 
         # Validate the leave_allocation
-        self.leave_allocation.action_confirm()
         self.leave_allocation.action_validate()
 
         # Check for leave_allocation state

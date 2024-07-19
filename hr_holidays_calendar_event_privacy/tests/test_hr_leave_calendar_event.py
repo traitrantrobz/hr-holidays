@@ -20,8 +20,8 @@ class TestHrLeaveCalendarEvent(TransactionCase):
     def _new_leave_request(cls, date_from, date_to):
         leave_form = Form(cls.env["hr.leave"].with_user(cls.admin_user))
         leave_form.holiday_status_id = cls.leave_type
-        leave_form.date_from = date_from
-        leave_form.date_to = date_to
+        leave_form.request_date_from = date_from
+        leave_form.request_date_to = date_to
         return leave_form.save()
 
     def test_calendar_event_privacy(self):
@@ -34,8 +34,8 @@ class TestHrLeaveCalendarEvent(TransactionCase):
         self.assertEqual(leave.meeting_id.privacy, "confidential")
         self.leave_type.calendar_event_privacy = "public"
         leave = self._new_leave_request(
-            fields.Date.today() + timedelta(days=3),
             fields.Date.today() + timedelta(days=4),
+            fields.Date.today() + timedelta(days=5),
         )
         leave.action_validate()
         self.assertEqual(leave.meeting_id.privacy, "public")

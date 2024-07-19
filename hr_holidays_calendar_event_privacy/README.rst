@@ -63,6 +63,7 @@ Contributors
 ------------
 
 -  Akim Juillerat <akim.juillerat@camptocamp.com>
+-  Tran Thanh Trai <traitt@trobz.com>>
 
 Maintainers
 -----------

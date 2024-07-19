@@ -11,8 +11,9 @@ class HrLeave(models.Model):
         """Set calendar events privacy for hr leaves according to type"""
         res = super()._prepare_holidays_meeting_values()
         for user, holidays in groupby(self, lambda h: h.user_id):
-            for holiday, meeting_vals in zip(holidays, res.get(user.id)):
-                meeting_vals[
-                    "privacy"
-                ] = holiday.holiday_status_id.calendar_event_privacy
+            for holiday, meeting_vals in zip(holidays, res.get(user.id), strict=False):
+                if holiday.holiday_status_id.calendar_event_privacy:
+                    meeting_vals[
+                        "privacy"
+                    ] = holiday.holiday_status_id.calendar_event_privacy
         return res
